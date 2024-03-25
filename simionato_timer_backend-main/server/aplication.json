@@ -1,0 +1,83 @@
+{
+    "app": {
+        "backend": {
+            "database": {
+                "type": "POSGRESQL",
+                "name": "BANCO_TESTE"
+            },
+            "tables": [{
+                    "name": "cliente",
+                    "fields": [{
+                        "name": "codigo",
+                        "type": "serial",
+                        "length": 0,
+                        "precision": 0,
+                        "nulo": "N",
+                        "padrao": ""
+                    }, {
+                        "name": "razao",
+                        "type": "varchar",
+                        "length": "50",
+                        "precision": 0,
+                        "nulo": "N",
+                        "padrao": ""
+                    }],
+                    "primaryKey": [{
+                        "key": "codigo"
+                    }],
+                    "tablespace": "Producao"
+                }, {
+                    "name": "empresa",
+                    "fields": [{
+                        "name": "id",
+                        "type": "serial",
+                        "length": 0,
+                        "precision": 0,
+                        "nulo": "N",
+                        "padrao": ""
+                    }, {
+                        "name": "razao",
+                        "type": "varchar",
+                        "length": "50",
+                        "precision": 0,
+                        "nulo": "N",
+                        "padrao": ""
+                    }],
+                    "primaryKey": [{
+                        "key": "id"
+                    }],
+                    "tablespace": "Producao"
+                },
+                {
+                    "name": "feriado",
+                    "fields": [{
+                        "name": "datafer",
+                        "type": "date",
+                        "length": 0,
+                        "precision": 0,
+                        "nulo": "N",
+                        "padrao": ""
+                    }, {
+                        "name": "descricao",
+                        "type": "varchar",
+                        "length": "30",
+                        "precision": 0,
+                        "nulo": "N",
+                        "padrao": ""
+                    }],
+                    "primaryKey": [],
+                    "tablespace": "Producao"
+                }
+            ]
+        },
+        "frontend": {
+            "src": "",
+            "server": {
+                "includes": [{ "variable": "express", "from": "express" }],
+                "app": "app",
+                "porta": 30000,
+                "rotas": [{ "path": "/", "require": "./route/tarefaRoute.js" }]
+            }
+        }
+    }
+}
