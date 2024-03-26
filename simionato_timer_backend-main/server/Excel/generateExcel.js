@@ -22,7 +22,6 @@ async function generateExcel(lsApontamentos) {
         views: [{ showGridLines: false }], // oculta as linhas de grade
     });
 
-    const horasPorAuditor = {};
     let totalHorasApontadas = 0; // Variável para armazenar a soma das horas apontadas
 
     try {
@@ -257,7 +256,7 @@ rowIndex = 7;
                         top: { style: 'thin' },
                         left: { style: 'thin' },
                         bottom: { style: 'thin' },
-                        right: { style: 'thin' },
+                        right: { style: 'thin' },       
                     };
                 });
             }
